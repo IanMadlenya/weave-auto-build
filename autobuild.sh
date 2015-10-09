@@ -4,12 +4,12 @@ cd
 export FLEX_HOME=/home/build/flex
 export ANT_OPTS="-XX:MaxPermSize=256m -Xmx768m"
 pushd Weave > /dev/null
-WEAVE_VERSION="./WeaveUISpark/src/weave/weave_version.txt"
 git fetch -fq 2>&1 >> ~/output-build
 git reset --hard origin/master 2>&1 >> ~/output-build
-echo "Nightly Build (`date`)" > $WEAVE_VERSION
-#echo "Milestone 1.9.36 (`date`)" > $WEAVE_VERSION
+
 ant clean dist 2>&1 >> ~/output-build
+#ant -DVERSION="Milestone 1.9.39 (`date`)" clean dist 2>&1 >> ~/output-build
+
 BUILD_RESULT=$?
 popd > /dev/null
 if (( ! $BUILD_RESULT )); then
