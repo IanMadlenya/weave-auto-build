@@ -5,10 +5,10 @@ export FLEX_HOME=/home/build/flex
 export ANT_OPTS="-XX:MaxPermSize=256m -Xmx768m"
 pushd Weave > /dev/null
 git fetch -fq 2>&1 >> ~/output-build
-git reset --hard origin/master 2>&1 >> ~/output-build
+git reset --hard origin/develop 2>&1 >> ~/output-build
 
 ant clean dist 2>&1 >> ~/output-build
-#ant -DVERSION="Milestone 1.9.39 (`date`)" clean dist 2>&1 >> ~/output-build
+#ant -DVERSION="Milestone 1.9.43 (`date`)" clean dist 2>&1 >> ~/output-build
 
 BUILD_RESULT=$?
 popd > /dev/null
